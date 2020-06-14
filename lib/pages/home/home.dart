@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../api/home.dart' show getHomeInfo;
 import 'package:dio/dio.dart';
-// import '../../utils/http.dart';
 
 class Home extends StatefulWidget {
   Home();
@@ -18,9 +17,8 @@ class _Home extends State<Home> {
   }
 
   Future initialization() async {
-    print('准备请求1');
     try {
-      Response res = await getHomeInfo();
+      Response res = await getHomeInfo({'data': '测试一下'});
       print(res);
     } catch (e) {
       print(e);
