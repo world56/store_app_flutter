@@ -12,11 +12,11 @@ class Request extends InterceptorsWrapper {
 
   Request() {
     this.httpUrl = baseUrl;
-    this.createHttp();
+    this.createHttpConfig();
   }
 
   /// 初始化请求配置
-  createHttp() {
+  createHttpConfig() {
     this.http.interceptors.add(InterceptorsWrapper(
           onRequest: this.onRequest,
           onResponse: this.onResponse,
@@ -41,7 +41,6 @@ class Request extends InterceptorsWrapper {
   Future onRequest(RequestOptions options) async {
     options.baseUrl = this.httpUrl;
     options.connectTimeout = this.timeout;
-    // String method = options?.method;
     print('请求前拦截处理 请求类型：${options?.queryParameters}');
     return super.onRequest(options);
   }
