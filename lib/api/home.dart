@@ -4,7 +4,13 @@ import '../utils/request.dart';
 Future getHomeInfo(data) {
   return http.request('home', {
     'method': 'GET',
-    'queryParameters': {'queryParameters': 'queryParameters'},
-    'data': data
+    'queryParameters': {'queryParameters': 'queryParameters'}
+  });
+}
+
+// 获取首页轮播
+Future getHomeSwiper() {
+  return http.request('home/getSwiper', {
+    'method': 'GET',
   });
 }
