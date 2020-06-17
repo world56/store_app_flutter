@@ -38,6 +38,7 @@ class _Index extends State<Index> {
           ),
         ),
         centerTitle: true,
+        elevation: 0,
       ),
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 22,
