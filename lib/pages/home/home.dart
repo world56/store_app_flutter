@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
-  List<Map> swiperList = [];
+  List<dynamic> swiperList = [];
 
   @override
   void initState() {
@@ -41,11 +41,10 @@ class _Home extends State<Home> {
   Future intSwiper() async {
     try {
       Response res = await getHomeSwiper();
-      print('res-win-$res');
+      print('res-winTTTT-$res');
       setState(() {
         this.swiperList = json.decode(res.toString());
       });
-      print('swiper-win-$res');
     } catch (e) {
       print('swiper-error-$e');
     }

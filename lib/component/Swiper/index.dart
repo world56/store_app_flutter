@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class SwiperDiy extends StatelessWidget {
-  final List swiperList;
+  final List<dynamic> swiperList;
 
   SwiperDiy({
     Key key,
@@ -12,8 +12,8 @@ class SwiperDiy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
-      child: Swiper( 
+      height: 200,
+      child: Swiper(
         itemCount: this.swiperList.length,
         itemBuilder: (BuildContext context, int i) {
           return Image.network(

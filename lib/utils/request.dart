@@ -41,22 +41,24 @@ class Request extends InterceptorsWrapper {
   Future onRequest(RequestOptions options) async {
     options.baseUrl = this.httpUrl;
     options.connectTimeout = this.timeout;
-    print('请求前拦截处理 请求类型：${options?.queryParameters}');
+    // options.contentType = Headers.jsonContentType;
+    options.responseType = ResponseType.plain;
+    // print('请求前拦截处理 请求类型：${options?.queryParameters}');
     return super.onRequest(options);
   }
 
   /// 请求后返回数据处理
   @override
   Future onResponse(Response response) {
-    print(
-        "请求后返回数据处理[${response?.statusCode}] => PATH: ${response?.request?.path}");
+    // print(
+    // "请求后返回数据处理[${response?.statusCode}] => PATH: ${response?.request?.path}");
     return super.onResponse(response);
   }
 
   /// 请求失败
   @override
   Future onError(DioError err) {
-    print("请求失败[${err?.response?.statusCode}] => PATH: ${err?.request?.path}");
+    // print("请求失败[${err?.response?.statusCode}] => PATH: ${err?.request?.path}");
     return super.onError(err);
   }
 }

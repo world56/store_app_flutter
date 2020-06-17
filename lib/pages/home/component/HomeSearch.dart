@@ -20,22 +20,42 @@ class HomeSearch extends StatelessWidget {
             child: TextField(
               enabled: false,
               decoration: InputDecoration(
-                hintText: '你好',
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: Colors.white60,
+                ),
+                contentPadding: EdgeInsets.all(10.0),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                  borderSide: BorderSide(
+                    color: Colors.yellow,
+                  ),
+                ),
+                hintText: '请输入相关商品',
                 hintStyle: TextStyle(
                   color: Colors.white60,
                 ),
-                border: InputBorder.none,
               ),
             ),
           ),
           flex: 7,
         ),
         Expanded(
-          child: RaisedButton(
-            child: Text('搜索'),
-            color: Colors.white,
-            textColor: Colors.red,
-            onPressed: () {},
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(0, 0, 8, 0),
+            child: RaisedButton(
+              shape: StadiumBorder(),
+              child: Text(
+                '搜索',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 14,
+                ),
+              ),
+              color: Colors.white,
+              textColor: Colors.red,
+              onPressed: () {},
+            ),
           ),
           flex: 2,
         ),
